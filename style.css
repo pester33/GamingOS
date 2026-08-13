@@ -1,1 +1,57 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
+  background: linear-gradient(180deg, #2a0a4a 0%, #0b2a8f 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.title {
+  font-family: 'Titan One', cursive;
+  font-size: clamp(52px, 10vw, 100px);
+  letter-spacing: 3px;
+  -webkit-text-stroke: 2px #000;
+  paint-order: stroke fill;
+  background: linear-gradient(180deg, #d9ff8a 0%, #7ed83a 45%, #3a9c15 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 0 #123c05) drop-shadow(0 8px 8px rgba(0,0,0,0.6));
+  margin-bottom: 24px;
+}
+
+.info {
+  font-weight: 700;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.8;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 32px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 16px 36px;
+  font-family: 'Titan One', cursive;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  paint-order: stroke fill;
+  border-radius: 14px;
+  border: 4px solid #0d3d04;
+  background: linear-gradient(180deg, #9be04a, #4caf1f 60%, #2c6e10);
+  box-shadow:
+    inset 0 3px 0 rgba(255,255,255,0.45),
+    0 5px 0 #0a2a05,
+    0 8px 12px rgba(0,0,0,0.5);
+  transition: transform 0.12s;
+}
+.download-btn:hover  { transform: scale(1.06); }
+.download-btn:active { transform: scale(0.95); }
