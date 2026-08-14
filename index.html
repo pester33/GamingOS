@@ -6,68 +6,104 @@
   <title>GamingOS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">Gaming<span>OS</span></div>
-    <div class="nav-links">
-      <a class="nav-btn" href="#about">About</a>
-      <a class="nav-btn" href="#install">How to install</a>
-      <a class="nav-btn" href="#download">Download</a>
+
+  <!-- Top Header Area (Purple Gradient) -->
+  <header class="header-bg">
+    <div class="top-bar">
+      <!-- Your logo image replaces the text here -->
+      <a href="#" class="logo"></a>
+      
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#install">How to install</a>
+        <a href="#download">Download</a>
+        <a href="#" class="donate-btn">Donate</a>
+      </nav>
     </div>
-  </nav>
+
+    <div class="hero-title">
+      <h1>GamingOS 1.0 'Pester'</h1>
+    </div>
+  </header>
 
   <main class="page">
-    <section class="card hero-card" id="about">
-      <div class="hero-icon"></div>
-      <div class="hero-text">
-        <h1>GamingOS</h1>
-        <span class="badge">BY PESTER</span>
-        <p>GamingOS was created by Pester There is no Discord yet guys but you can download here! GamingOS is inspired by TEBGS</p>
+    <!-- Ready to Download block -->
+    <section class="mint-section center-text" id="download">
+      <h2>Ready to download?</h2>
+      <p>GamingOS is available completely free. Choose your download below.<br>For more information read the installation instructions.</p>
+      <a href="#install" class="purple-btn">Installation Instructions</a>
+    </section>
+
+    <!-- First Split Block: About & Download -->
+    <section class="mint-section split-section" id="about">
+      <div class="split-image">
+        <!-- Placeholder for an OS screenshot -->
+        <div class="os-mockup">
+          <div class="os-logo"></div>
+        </div>
+      </div>
+      <div class="split-text">
+        <span class="mint-subtitle">Lightweight, fast, optimized</span>
+        <h2>Gaming Edition</h2>
+        <p>GamingOS was created by Pester. There is no Discord yet guys but you can download here! GamingOS is inspired by TEBGS.</p>
+        
+        <div class="stats-row">
+          <span><strong>Arch:</strong> 64-bit</span>
+          <span><strong>Price:</strong> Free</span>
+          <span><strong>Version:</strong> 1.0</span>
+        </div>
+
+        <div class="btn-group">
+          <a href="#" class="dark-btn">Download</a>
+          <a href="#" class="text-link">New Features</a>
+          <a href="#" class="text-link">Release Notes</a>
+        </div>
       </div>
     </section>
 
-    <section class="stats">
-      <div class="card stat-card">
-        <div class="stat-value">1.0</div>
-        <div class="stat-label">Version</div>
+    <!-- Second Split Block: Install Instructions -->
+    <section class="mint-section split-section reverse-mobile" id="install">
+      <div class="split-text">
+        <span class="mint-subtitle">Simple, straightforward setup</span>
+        <h2>How to Install</h2>
+        <p>Follow these steps carefully to get GamingOS running on your system.</p>
+        <ol class="install-list">
+          <li>Get a USB flash drive at least <strong>32 GB</strong>.</li>
+          <li>Get Rufus or balenaEtcher (thanks TuffTheo!).</li>
+          <li>Click the Download button above to get the ISO.</li>
+          <li>Open Rufus/balenaEtcher, select the ISO, click Start and wait.</li>
+          <li>Restart your PC and keep spamming <strong>F2</strong> or <strong>F12</strong> to open the boot menu.</li>
+          <li>Once you're in the boot menu press <strong>F6</strong> to put the USB flash drive on top.</li>
+          <li>Make sure Secure Boot is <strong>OFF</strong> and BitLocker is <strong>OFF</strong>.</li>
+          <li>Make sure SATA mode is set to <strong>AHCI</strong> not RAID.</li>
+          <li>Press <strong>F10</strong> to save changes and enjoy GamingOS.</li>
+        </ol>
       </div>
-      <div class="card stat-card">
-        <div class="stat-value">Free</div>
-        <div class="stat-label">Price</div>
-      </div>
-      <div class="card stat-card">
-        <div class="stat-value">64-bit</div>
-        <div class="stat-label">Arch</div>
-      </div>
-      <div class="card stat-card">
-        <div class="stat-value">32 GB</div>
-        <div class="stat-label">USB Needed</div>
+      <div class="split-image">
+        <div class="os-mockup dark-mockup">
+          <ul class="fake-menu">
+            <li>Boot Menu</li>
+            <li>> USB Flash Drive</li>
+            <li>> Windows Boot Manager</li>
+            <li>Secure Boot: Disabled</li>
+            <li>SATA Mode: AHCI</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="card info-card" id="install">
-      <div class="card-title">HOW TO INSTALL GAMING OS oke guys so</div>
-      <div class="info-row">1. Get a USB flash drive at least 32 GB</div>
-      <div class="info-row">2. Get Rufus or balenaEtcher (thanks TuffTheo for telling me about balenaEtcher )</div>
-      <div class="info-row">3. Click my Download button below to get the ISO</div>
-      <div class="info-row">4. Make sure your USB is plugged in then open Rufus/balenaEtcher select the ISO click Start and wait</div>
-      <div class="info-row">5. Restart your PC and keep spamming F2 or F12 (depends on your device) to open the boot menu</div>
-      <div class="info-row">6. Once youre in the boot menu press F6 to put the USB flash drive on top</div>
-      <div class="info-row">7. Make sure Secure Boot is OFF and BitLocker is OFF</div>
-      <div class="info-row">8. Make sure SATA mode is set to AHCI not RAID</div>
-      <div class="info-row">9. Press F10 to save changes and enjoy GamingOS </div>
-    </section>
-
-    <section class="card download-card" id="download">
-      <a class="green-btn" id="download-link" href="#">Download GamingOS</a>
-    </section>
   </main>
 
-  <footer class="footer">Made by <a href="#">Pester</a></footer>
-  
-  <script src="script.js?v=4"></script>
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Made by <a href="#">Pester</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js?v=5"></script>
 </body>
 </html>
