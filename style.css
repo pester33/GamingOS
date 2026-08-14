@@ -1,261 +1,98 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming OS</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-:root {
-  --mint-1: #9b5cf6;
-  --mint-2: #7c3aed;
-  --mint-3: #5b21b6;
-  --green-link: #7c3aed;
-  --dark: #241a3d;
-  --dark-2: #2a1f47;
-  --body-bg: #f4f2f8;
-  --card-bg: #ffffff;
-  --line: #e3ddef;
-  --text: #2b2340;
-  --text-dim: #675d7e;
-}
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="#" class="logo"></a>
+    <nav class="nav-links">
+      <a href="#features" class="nav-btn">Features</a>
+      <a href="#stats" class="nav-btn">Stats</a>
+      <a href="#download" class="nav-btn">Download</a>
+    </nav>
+  </header>
 
-html { scroll-behavior: smooth; }
+  <!-- Page Content -->
+  <main class="page">
+    <!-- Hero Card -->
+    <section class="card hero-card">
+      <div class="hero-icon" aria-label="Gaming OS Banner"></div>
+      <div class="hero-text">
+        <span class="badge">V1.0 RELEASE</span>
+        <h1>GAMING OS</h1>
+        <p>A lightweight, high-performance operating system tailored specifically for gamers and low-latency workflows.</p>
+      </div>
+    </section>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--body-bg);
-  min-height: 100vh;
-  color: var(--text);
-  display: flex;
-  flex-direction: column;
-}
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+      <div class="card stat-card">
+        <div class="stat-value">0.1ms</div>
+        <div class="stat-label">Input Lag</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-value">+25%</div>
+        <div class="stat-label">FPS Boost</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-value">1.2 GB</div>
+        <div class="stat-label">RAM Usage</div>
+      </div>
+      <div class="card stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Debloated</div>
+      </div>
+    </section>
 
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 18px 26px;
-  background: linear-gradient(120deg, var(--mint-1), var(--mint-2) 55%, var(--mint-3));
-}
+    <!-- Features Info Card -->
+    <section id="features" class="card info-card">
+      <h2 class="card-title">Key Features</h2>
+      <div class="info-row">Stripped background services and telemetries for max CPU efficiency.</div>
+      <div class="info-row">Pre-installed modern GPU drivers, Vulkan runtime, and DXVK.</div>
+      <div class="info-row">Real-time kernel scheduling prioritization for games.</div>
+      <div class="info-row">Custom dark theme optimized for OLED and fast navigation.</div>
+    </section>
 
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  font-size: 30px;
-  color: #fff;
-  letter-spacing: -0.5px;
-}
-.logo::before {
-  content: "";
-  width: 44px;
-  height: 44px;
-  background: url('logo.png') center / contain no-repeat;
-}
-.logo span { color: #fff; font-weight: 600; }
+    <!-- Download Card -->
+    <section id="download" class="card download-card">
+      <h2 class="card-title" style="border: none; margin-bottom: 20px;">Ready to Upgrade?</h2>
+      <a href="#" class="green-btn">Download ISO</a>
+    </section>
+  </main>
 
-.nav-links { display: flex; gap: 6px; flex-wrap: wrap; }
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Gaming OS Project. Built for performance. <a href="#">GitHub</a></p>
+  </footer>
 
-.nav-btn {
-  padding: 9px 16px;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: background 0.18s;
-}
-.nav-btn:hover { background: rgba(255,255,255,0.20); }
+  <!-- Intersection Observer to trigger entrance animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
 
-.page {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 46px 20px 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  flex: 1;
-}
-
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 32px 34px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.6s cubic-bezier(.16,.8,.3,1),
-    transform 0.6s cubic-bezier(.16,.8,.3,1),
-    box-shadow 0.2s;
-}
-.card.visible { opacity: 1; transform: translateY(0); }
-.card:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.09); }
-
-.hero-card {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  background: linear-gradient(120deg, var(--mint-1), var(--mint-2) 55%, var(--mint-3));
-  border: none;
-  padding: 44px 38px;
-}
-.hero-card:hover { box-shadow: 0 8px 24px rgba(124,58,237,0.30); }
-
-.hero-icon {
-  width: 120px;
-  height: 120px;
-  flex-shrink: 0;
-  background: url('logo.png') center / contain no-repeat;
-}
-
-.hero-text h1 {
-  font-size: 46px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-}
-
-.badge {
-  display: inline-block;
-  margin: 12px 0 14px;
-  padding: 6px 16px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #fff;
-  background: rgba(0,0,0,0.20);
-}
-
-.hero-text p {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.65;
-  color: rgba(255,255,255,0.95);
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-.stat-card { text-align: center; padding: 26px 12px 22px; }
-.stats .card:nth-child(1) { transition-delay: 0.04s; }
-.stats .card:nth-child(2) { transition-delay: 0.10s; }
-.stats .card:nth-child(3) { transition-delay: 0.16s; }
-.stats .card:nth-child(4) { transition-delay: 0.22s; }
-
-.stat-value {
-  font-size: 30px;
-  font-weight: 700;
-  color: var(--dark);
-  letter-spacing: -1px;
-}
-
-.stat-label {
-  margin-top: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-
-.info-card { padding: 34px 36px; }
-
-.card-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--dark);
-  letter-spacing: -0.5px;
-  margin-bottom: 10px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--line);
-}
-
-.info-row {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-  color: var(--text-dim);
-  padding: 15px 8px 15px 14px;
-  border-bottom: 1px solid #f0ecf7;
-  border-left: 3px solid transparent;
-  border-radius: 4px;
-  opacity: 0;
-  transform: translateX(-18px);
-  transition:
-    opacity 0.5s cubic-bezier(.16,.8,.3,1),
-    transform 0.5s cubic-bezier(.16,.8,.3,1),
-    background 0.18s, border-color 0.18s, color 0.18s;
-}
-.info-row.visible { opacity: 1; transform: translateX(0); }
-.info-row:last-child { border-bottom: none; }
-.info-row:hover {
-  background: #f6f2fd;
-  border-left-color: var(--green-link);
-  color: var(--dark);
-}
-
-.download-card {
-  text-align: center;
-  border: 2px dashed #cfc4e6;
-  background: #fbfaff;
-  padding: 40px 30px;
-}
-
-.green-btn {
-  display: inline-block;
-  padding: 16px 42px;
-  border-radius: 6px;
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(120deg, var(--mint-1), var(--mint-3));
-  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-  transition: filter 0.18s, transform 0.15s, box-shadow 0.18s;
-}
-.green-btn:hover {
-  filter: brightness(1.06);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(124,58,237,0.42);
-}
-.green-btn:active { transform: translateY(1px); }
-
-.footer {
-  background: var(--dark-2);
-  padding: 26px 20px;
-  text-align: center;
-  color: #cfc7e0;
-  font-weight: 400;
-  font-size: 15px;
-}
-.footer a {
-  color: #c4a7ff;
-  font-weight: 600;
-  text-decoration: none;
-}
-.footer a:hover { text-decoration: underline; }
-
-@media (max-width: 680px) {
-  .navbar { padding: 14px 18px; }
-  .logo { font-size: 24px; }
-  .logo::before { width: 34px; height: 34px; }
-  .nav-btn { padding: 7px 10px; font-size: 14px; }
-  .stats { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .hero-card { flex-direction: column; text-align: center; padding: 34px 22px; }
-  .hero-text h1 { font-size: 34px; }
-  .card { padding: 24px 20px; }
-  .card-title { font-size: 21px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card, .info-row { opacity: 1; transform: none; transition: none; }
-}
+      document.querySelectorAll(".card, .info-row").forEach((el) => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
