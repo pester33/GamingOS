@@ -48,10 +48,8 @@ body {
   letter-spacing: -0.5px;
 }
 .logo::before {
-  content: "";
-  width: 44px;
-  height: 44px;
-  background: url('logo.png') center / contain no-repeat;
+  /* Hidden so it doesn't squash the wide banner next to your text */
+  display: none; 
 }
 .logo span { color: #fff; font-weight: 600; }
 
@@ -106,10 +104,12 @@ body {
 .hero-card:hover { box-shadow: 0 8px 24px rgba(124,58,237,0.30); }
 
 .hero-icon {
-  width: 120px;
-  height: 120px;
+  /* Adjusted for the wide pixel art banner */
+  width: 300px;
+  height: 60px;
   flex-shrink: 0;
   background: url('logo.png') center / contain no-repeat;
+  image-rendering: pixelated; /* Keeps the pixel edges sharp */
 }
 
 .hero-text h1 {
@@ -247,10 +247,13 @@ body {
 @media (max-width: 680px) {
   .navbar { padding: 14px 18px; }
   .logo { font-size: 24px; }
-  .logo::before { width: 34px; height: 34px; }
   .nav-btn { padding: 7px 10px; font-size: 14px; }
   .stats { grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .hero-card { flex-direction: column; text-align: center; padding: 34px 22px; }
+  
+  /* Mobile adjustments for the banner */
+  .hero-icon { width: 100%; max-width: 240px; height: 50px; }
+  
   .hero-text h1 { font-size: 34px; }
   .card { padding: 24px 20px; }
   .card-title { font-size: 21px; }
