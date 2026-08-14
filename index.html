@@ -7,16 +7,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- Top Header Area (Purple Gradient) -->
   <header class="header-bg">
     <div class="top-bar">
-      <!-- Your logo image replaces the text here -->
+      <!-- Your logo.png will display here -->
       <a href="#" class="logo"></a>
-      
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#install">How to install</a>
@@ -38,13 +37,10 @@
       <a href="#install" class="purple-btn">Installation Instructions</a>
     </section>
 
-    <!-- First Split Block: About & Download -->
+    <!-- First Split Block: About (preview.png) -->
     <section class="mint-section split-section" id="about">
       <div class="split-image">
-        <!-- Placeholder for an OS screenshot -->
-        <div class="os-mockup">
-          <div class="os-logo"></div>
-        </div>
+        <img src="preview.png" alt="GamingOS Desktop Preview" class="preview-img">
       </div>
       <div class="split-text">
         <span class="mint-subtitle">Lightweight, fast, optimized</span>
@@ -52,9 +48,9 @@
         <p>GamingOS was created by Pester. There is no Discord yet guys but you can download here! GamingOS is inspired by TEBGS.</p>
         
         <div class="stats-row">
-          <span><strong>Arch:</strong> 64-bit</span>
+          <span><strong>Base:</strong> Linux Mint</span>
+          <span><strong>Architecture:</strong> 64-bit</span>
           <span><strong>Price:</strong> Free</span>
-          <span><strong>Version:</strong> 1.0</span>
         </div>
 
         <div class="btn-group">
@@ -65,7 +61,7 @@
       </div>
     </section>
 
-    <!-- Second Split Block: Install Instructions -->
+    <!-- Second Split Block: Install Instructions (preview2.png) -->
     <section class="mint-section split-section reverse-mobile" id="install">
       <div class="split-text">
         <span class="mint-subtitle">Simple, straightforward setup</span>
@@ -84,14 +80,21 @@
         </ol>
       </div>
       <div class="split-image">
-        <div class="os-mockup dark-mockup">
-          <ul class="fake-menu">
-            <li>Boot Menu</li>
-            <li>> USB Flash Drive</li>
-            <li>> Windows Boot Manager</li>
-            <li>Secure Boot: Disabled</li>
-            <li>SATA Mode: AHCI</li>
-          </ul>
+        <img src="preview2.png" alt="GamingOS Installation Preview" class="preview-img">
+      </div>
+    </section>
+
+    <!-- Third Split Block: Browser/Features (preview3.png) -->
+    <section class="mint-section split-section">
+      <div class="split-image">
+        <img src="preview3.png" alt="GamingOS Browser Preview" class="preview-img">
+      </div>
+      <div class="split-text">
+        <span class="mint-subtitle">Zero bloatware, max FPS</span>
+        <h2>Built-in Browser & Tools</h2>
+        <p>Take a look inside GamingOS! Everything is stripped down to give you maximum performance and zero background stutter while you game or browse the web.</p>
+        <div class="btn-group">
+          <a href="#download" class="text-link">Get the ISO</a>
         </div>
       </div>
     </section>
@@ -104,6 +107,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js"></script>
 </body>
 </html>
